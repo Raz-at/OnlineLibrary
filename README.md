@@ -2,7 +2,7 @@
 <p>This project is an Online Library web application built using ASP.NET Core 6 and Microsoft SQL Server for the database. The application supports two types of users: admin and regular users (students and teachers). Admins have the ability to manage books, view users, and perform administrative actions, while regular users can borrow books and manage their account.
 </p>
 
-<b>Features<b>
+<p>Features</p>
 Admin Features:
 <ul>
   <li>Add, edit, and remove books.</li>
@@ -18,10 +18,10 @@ User Features:
 
   <br />
   
-Technology Stack
-ASP.NET Core 6:
+Technology Stack:
+<p>ASP.NET Core 6:</p>
   Framework for building web applications and APIs using .NET.
-Microsoft SQL Server:
+<p>Microsoft SQL Server:</p>
   Relational database management system used for storing application data.
 
 
