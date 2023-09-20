@@ -47,9 +47,9 @@ As a User (Student/Teacher):
 <br/>
 Contributing
   <li>Contributions are welcome! Please create an issue or pull request if you find any bugs or want to suggest enhancements.</li>
-
+<br/>
 License
  <li>This project is licensed under the MIT License - see the LICENSE file for details.</li>
-
+<br/>
 Acknowledgments
  <li>Special thanks to the ASP.NET Core and Microsoft SQL Server communities for their support and contributions to the development of this application.</li>
