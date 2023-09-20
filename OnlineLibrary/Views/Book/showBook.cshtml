@@ -1,0 +1,102 @@
+﻿@model List<OnlineLibrary.Models.Book>
+@inject IHttpContextAccessor contxt
+@{
+}
+
+@if (contxt.HttpContext.Session.GetString("role") == "user")
+{
+    if (contxt.HttpContext.Session.GetString("roll") == "Student")
+    {
+        if (ViewBag.count < 3)
+        {
+            <h2>You can take book. Count: @ViewBag.count</h2>
+        }
+        else
+        {
+            <h2>You cannot take any more books because you already have @ViewBag.count books </h2>
+        }
+    }
+    else
+    {
+        if (ViewBag.count < 2)
+        {
+            <h2>You can take book. Count: @ViewBag.count</h2>
+        }
+        else
+        {
+            <h2>You cannot take any more books because you already have @ViewBag.count books </h2>
+        }
+    }
+}
+else
+{
+    <h2>You are the @contxt.HttpContext.Session.GetString("role")</h2>
+}
+<form method="get" asp-action="showBook" class="mt-4">
+    <div class="input-group">
+        <input type="text" id="Search" name="search" class="form-control" placeholder="Search for books..." />
+        &nbsp
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <button type="submit" asp-action="showBook" class="btn btn-secondary">Clear</button>
+        </div>
+    </div>
+</form>
+
+<br /> 
+
+<table class="table table-hover">
+    <tdead class="thead-dark table-dark">
+        <tr class="table-dark">
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Author</th>
+            <th scope="col">Publish Date</th>
+            <th scope="col">Remaining</th>
+            <th scope="col">Price</th>
+            <th></th>
+        </tr>
+    </tdead>
+    <tbody>
+        @foreach(var book in Model)
+        {            
+        <tr>
+            <td>@book.Title</td>
+            <td>@book.Description</td>
+            <td>@book.Author</td>
+            <td>@book.PublishDate</td>
+            <td>@book.RemainingStock</td>
+            <td>@book.Price</td>
+            @if(contxt.HttpContext.Session.GetString("role") == "user")
+            {
+                    if (contxt.HttpContext.Session.GetString("roll") == "Student")
+                    {
+                        if (ViewBag.count < 3)
+                        {
+                            <td><a href="/UserBook/View/@book.BookId">Take</a></td>
+                        }
+                        else
+                        {
+                            <td><a href="/UserBook/View/@book.BookId" onclick="return false;">Take</a></td>
+                        }
+                    }
+                    else
+                    {
+                        if (ViewBag.count < 2)
+                        {
+                            <td><a href="/UserBook/View/@book.BookId">Take</a></td>
+                        }
+                        else
+                        {
+                            <td><a href="/UserBook/View/@book.BookId" onclick="return false;">Take</a></td>
+                        }
+                    }
+            }
+            else
+            {
+                <td><a href="/Admin/DeleteBook/@book.BookId">Delete</a></td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>

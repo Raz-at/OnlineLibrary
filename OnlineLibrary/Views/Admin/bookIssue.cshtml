@@ -1,0 +1,58 @@
+﻿@model List<OnlineLibrary.Models.Book>
+@inject IHttpContextAccessor contxt
+
+<h1>User Id: @contxt.HttpContext.Session.GetString("IssueUser")</h1>
+<h2>Role: @contxt.HttpContext.Session.GetString("IssueUserRole")</h2>
+<h3>Book Count: @ViewBag.countUser</h3>
+
+
+
+<table class="table table-hover">
+    <tdead class="thead-dark table-dark">
+        <tr class="table-dark">
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Author</th>
+            <th scope="col">Publish Date</th>
+            <th scope="col">Remaining</th>
+            <th scope="col">Price</th>
+            <th></th>
+        </tr>
+    </tdead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Description</td>
+                <td>@book.Author</td>
+                <td>@book.PublishDate</td>
+                <td>@book.RemainingStock</td>
+                <td>@book.Price</td>
+
+                @if (@contxt.HttpContext.Session.GetString("IssueUserRole") == "Student")
+                    {
+                        if (ViewBag.countUser < 3)
+                        {
+                            <td><a href="userbook/@book.BookId">Issue</a></td>
+                        }
+                        else
+                        {
+                            <td><a href="userbook/@book.BookId" onclick="return false;">Issue</a></td>
+                        }
+                    }
+                    else
+                    {
+                        if (ViewBag.countUser < 2)
+                        {
+                        <td><a href="userbook/@book.BookId">Issue</a></td>
+                    }
+                        else
+                        {
+                        <td><a href="userbook/@book.BookId" onclick="return false;">Issue</a></td>
+                        }
+                    }
+            </tr>
+        }
+    </tbody>
+</table>

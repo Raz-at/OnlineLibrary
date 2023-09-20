@@ -1,0 +1,17 @@
+﻿@model OnlineLibrary.Models.Admin
+@{
+}
+
+<form action="AdminLogin" method="post">
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="text" class="form-control" asp-for="Email">
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" asp-for="Password">
+    </div>
+        
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>

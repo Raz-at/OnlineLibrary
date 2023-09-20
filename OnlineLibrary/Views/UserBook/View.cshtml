@@ -1,0 +1,78 @@
+﻿@model OnlineLibrary.Models.UserBook
+@inject IHttpContextAccessor contxt
+
+@{}
+
+@if (ViewBag.message == true)
+{
+    <script>
+        alert('You have already taken this book');
+    </script>
+}
+else if (ViewBag.message == false)
+{
+    <script>
+        alert('Book Issued.');
+    </script>
+}
+else
+{
+
+}
+
+
+
+<form action="Issuse" method="post">
+
+    <div class="mb-3">
+        <label for="UserId" class="form-label">UserId</label>
+        <input type="text" class="form-control" asp-for="UserId" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label for="BookId" class="form-label">BookId</label>
+        <input type="text" class="form-control" asp-for="BookId" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label for="Username" class="form-label">Username</label>
+        <input type="text" class="form-control" asp-for="Username" readonly >
+    </div>
+
+    <div class="mb-3">
+        <label for="Title" class="form-label">Title</label>
+        <input type="text" class="form-control" asp-for="Title" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label for="IssueDate" class="form-label">IssueDate</label>
+        <input type="date" class="form-control" asp-for="IssueDate">
+    </div>
+
+    @if (ViewBag.active == "Deactive")
+    {
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">You account is deactivated by the admin. So you cannot issuse book right now.</h1>
+            </div>
+        </div>
+    }
+    else        
+    {
+        if (ViewBag.takeBook == true)
+        {
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">You already have taken this book.</h1>
+            </div>
+        </div>
+        }
+        else
+        {
+        <button type="submit" class="btn btn-primary" asp-controller="UserBook" asp-action="Issuse">Issuse</button>
+        }
+    }
+</form>
+
+
+

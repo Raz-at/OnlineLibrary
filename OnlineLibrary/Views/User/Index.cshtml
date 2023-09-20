@@ -1,0 +1,11 @@
+﻿@inject IHttpContextAccessor contxt
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome of the user controller</h1>
+
+    <h2>Hello : @contxt.HttpContext.Session.GetString("Name")</h2>
+</div>

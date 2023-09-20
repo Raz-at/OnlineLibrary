@@ -1,0 +1,45 @@
+﻿@model List<OnlineLibrary.Models.UserBook>
+@inject IHttpContextAccessor contxt
+@{
+}
+
+
+<table class="table table-hover">
+    <tdead class="thead-dark table-dark">
+        <tr class="table-dark">
+            <th >Book Title</th>
+            <th >User Name</th>
+            <th >Issuse Date</th>
+            <th >Remaning Days</th>
+        </tr>
+    </tdead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var book in Model)
+            {
+                var daysDifference = 30 - Convert.ToInt32((DateTime.Today - book.IssueDate).TotalDays);
+                @if (daysDifference < 0)
+                {
+                    <tr class="bg-danger">
+                        <td>@book.Title</td>
+                        <td>@book.Username</td>
+                        <td>@book.IssueDate.ToShortDateString()</td>
+                        <td>@daysDifference</td>                      
+                    </tr>
+                }
+                else
+                {
+                    <tr class="table-active">
+                        <td>@book.Title</td>
+                        <td>@book.Username</td>
+                        <td>@book.IssueDate.ToShortDateString()</td>
+                        <td>@daysDifference</td>
+                    </tr>
+                }
+            }
+        }
+    </tbody>
+</table>
+
+

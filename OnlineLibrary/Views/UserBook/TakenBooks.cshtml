@@ -1,0 +1,62 @@
+﻿@model List<OnlineLibrary.Models.UserBook>
+@inject IHttpContextAccessor contxt
+
+@{
+}
+
+<h1>Your taken books..</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Issuse Date</th>
+            <th scope="col">Remaning Days</th>
+            <th scope="col">Charge</th>
+            <th></th>
+        </tr> 
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+        @foreach(var book in Model)
+        {
+            var daysDifference =30 -  Convert.ToInt32((DateTime.Today - book.IssueDate).TotalDays);
+            @if (daysDifference <  0)
+            {
+                <tr class="bg-danger">
+                    <td>@book.Title</td>
+                    <td>@book.IssueDate.ToShortDateString()</td>
+                    <td>@daysDifference</td>
+                    
+                    @if (contxt.HttpContext.Session.GetString("roll") == "Student")
+                    {
+                    <td>@("Rs " + (daysDifference * -5))</td>
+                    }
+                    else
+                    {
+                    <td>@("Rs " + (daysDifference * -10))</td>
+                    }
+                    <th>
+                        <a href="Return/@book.Id"
+                        class="list-group-item list-group-item-action list-group-item-success">Return</a>
+                    </th>
+                </tr>
+
+            }
+            else
+            {
+                <tr class="table-active">
+                    <td>@book.Title</td>
+                    <td>@book.IssueDate.ToShortDateString()</td>
+                    <td>@daysDifference</td>
+                    <td>@("Rs " + 0)</td>
+                    <th><a href="Return/@book.Id" 
+                        class="list-group-item list-group-item-action list-group-item-success">Return</a></th>
+                </tr>                
+            }
+        }
+        }
+        
+    </tbody>
+</table>

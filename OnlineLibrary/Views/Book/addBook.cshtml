@@ -1,0 +1,40 @@
+﻿@model OnlineLibrary.Models.Book
+@{
+}
+<h1>Add New Book</h1>
+
+
+<form action="addBook" method="post">
+
+    <div class="mb-3">
+        <label for="Title" class="form-label">Title</label>
+        <input type="text" class="form-control" asp-for="Title">
+    </div>
+
+    <div class="mb-3">
+        <label for="Description" class="form-label">Description</label>
+        <input type="text" class="form-control" asp-for="Description">
+    </div>
+
+    <div class="mb-3">
+        <label for="Author" class="form-label">Author</label>
+        <input type="text" class="form-control" asp-for="Author">
+    </div>
+
+    <div class="mb-3">
+        <label for="PublishDate" class="form-label">PublishDate</label>
+        <input type="date" class="form-control" asp-for="PublishDate">
+    </div>
+
+    <div class="mb-3">
+        <label for="ActualStock" class="form-label">ActualStock</label>
+        <input type="number" class="form-control" asp-for="ActualStock">
+    </div>
+
+    <div class="mb-3">
+        <label for="Price" class="form-label">Price</label>
+        <input type="number" class="form-control" asp-for="Price">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>

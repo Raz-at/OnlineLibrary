@@ -1,0 +1,29 @@
+﻿@model OnlineLibrary.Models.User
+@{
+}
+
+
+<h1>Login In</h1>
+<form action="Login" method="post">
+
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="text" class="form-control" asp-for="Email">
+    </div>
+
+    <div class="mb-3">
+        <label for="passwprd" class="form-label">Password</label>
+        <input type="password" class="form-control" asp-for="Password">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+@if (ViewBag.findEmail == true)
+{
+    <script>
+        alert("Incorrect Email or password");
+    </script>
+}

@@ -1,0 +1,50 @@
+﻿@model List<OnlineLibrary.Models.User>
+@inject IHttpContextAccessor contxt
+
+
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Role</th>
+            <th scope="col">Status</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var user in Model)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>@user.Address</td>
+                <td>@user.Gender</td>
+                <td>@user.Phone</td>
+                <td>@user.roll</td>
+                <td>@user.status</td>
+                <td><a href="Delete/@user.Id">Remove</a></td>
+                @if(@user.status == "Active")
+                {
+                    <td><a href="Change/@user.Id">Deactive</a></td>
+                    
+                }
+                else
+                {
+                    <td><a href="Change/@user.Id">Active</a></td>
+                   
+
+                }
+                <td><a href="searchBook/@user.Id">Issuse</a></td>
+            </tr> 
+        }
+    </tbody>
+</table>

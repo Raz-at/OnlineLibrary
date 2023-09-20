@@ -1,0 +1,33 @@
+﻿@model List<OnlineLibrary.Models.Book>
+@{
+}
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Author</th>
+            <th scope="col">Publish Date</th>
+            <th scope="col">Actual Stock</th>
+            <th scope="col">Remaining Stock</th>
+            <th scope="col">Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var book in Model)
+        {
+        <tr>
+                <td>@book.Title</td>
+                <td>@book.Description</td>
+                <td>@book.Author</td>
+                <td>@book.PublishDate</td>
+                <td>@book.ActualStock</td>
+                <td>@book.RemainingStock</td>
+                <td>@book.Price</td>
+                <td><a href="Edit/@book.BookId">Edit</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
