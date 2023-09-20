@@ -24,38 +24,32 @@ User Features:
 <strong>Microsoft SQL Server:</strong>
   <li>Relational database management system used for storing application data.</li>
 
-
+<br/>
 As an Admin:
 <ul>
-  <li>Log in with admin credentials.
-    <li>username: Admin</li>
-    <li>password: Admin</li>
-  </li>
+  <li>Log in with admin credentials.</li>
+  <li>username: Admin</li>
+  <li>password: Admin</li>
   <li>Manage books (add, edit, remove).</li>
   <li>View registered users and take actions.</li>
   <li>Deactivate user accounts for overdue books.</li>
-</ul>
-    
-  
-  
+</ul> 
   
 
 As a User (Student/Teacher):
-<ul>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
-  Log in with user credentials.
-  Borrow books (2 for students, 3 for teachers) for 30 days.
-  Return books within the due date to avoid charges.
+<ul>  
+  <li>Creat user account</li>
+  <li> Log in with user credentials.</li>
+  <li>Borrow books (2 for students, 3 for teachers) for 30 days.</li>
+  <li> Return books within the due date to avoid charges.</li>
+</ul> 
+ 
 
 Contributing
-  Contributions are welcome! Please create an issue or pull request if you find any bugs or want to suggest enhancements.
+  <li>Contributions are welcome! Please create an issue or pull request if you find any bugs or want to suggest enhancements.</li>
 
 License
-  This project is licensed under the MIT License - see the LICENSE file for details.
+ <li>This project is licensed under the MIT License - see the LICENSE file for details.</li>
 
 Acknowledgments
-  Special thanks to the ASP.NET Core and Microsoft SQL Server communities for their support and contributions to the development of this application.
+ <li>Special thanks to the ASP.NET Core and Microsoft SQL Server communities for their support and contributions to the development of this application.</li>
