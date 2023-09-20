@@ -44,7 +44,7 @@ As a User (Student/Teacher):
   <li> Return books within the due date to avoid charges.</li>
 </ul> 
  
-
+<br/>
 Contributing
   <li>Contributions are welcome! Please create an issue or pull request if you find any bugs or want to suggest enhancements.</li>
 
