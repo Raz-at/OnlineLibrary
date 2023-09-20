@@ -18,11 +18,12 @@ User Features:
 
   <br />
   
-Technology Stack:
-<p>ASP.NET Core 6:</p>
-  Framework for building web applications and APIs using .NET.
-<p>Microsoft SQL Server:</p>
-  Relational database management system used for storing application data.
+Technology Stack:<br/>
+ASP.NET Core 6:
+ <li>Framework for building web applications and APIs using .NET.</li> 
+ <br/>
+<strong>Microsoft SQL Server:</strong>
+  <li>Relational database management system used for storing application data.</li>
 
 
 As an Admin:
