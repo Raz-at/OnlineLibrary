@@ -15,13 +15,10 @@ User Features:
   <li>Borrow books (3 books for students, 2 books for teachers) for 30 days.</li>
   <li>Pay charges (Rs 5 for students, Rs 10 for teachers) if books are not returned within 30 days.</li>
 </ul>
-
-<br>
 <br/>
 
-  
-Technology Stack:<br/>
-ASP.NET Core 6:
+<h2>Technology Stack:</h2><br/>
+<strong>ASP.NET Core 6:</strong>
  <li>Framework for building web applications and APIs using .NET.</li> 
  <br/>
 <strong>Microsoft SQL Server:</strong>
@@ -29,14 +26,27 @@ ASP.NET Core 6:
 
 
 As an Admin:
-  Log in with admin credentials.
-    username: Admin
-    password: Admin
-  Manage books (add, edit, remove).
-  View registered users and take actions.
-  Deactivate user accounts for overdue books.
+<ul>
+  <li>Log in with admin credentials.
+    <li>username: Admin</li>
+    <li>password: Admin</li>
+  </li>
+  <li>Manage books (add, edit, remove).</li>
+  <li>View registered users and take actions.</li>
+  <li>Deactivate user accounts for overdue books.</li>
+</ul>
+    
+  
+  
+  
 
 As a User (Student/Teacher):
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
   Log in with user credentials.
   Borrow books (2 for students, 3 for teachers) for 30 days.
   Return books within the due date to avoid charges.
