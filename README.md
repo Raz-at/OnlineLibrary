@@ -1,15 +1,22 @@
-Online Library ASP.NET Core 6 Web Application
-This project is an Online Library web application built using ASP.NET Core 6 and Microsoft SQL Server for the database. The application supports two types of users: admin and regular users (students and teachers). Admins have the ability to manage books, view users, and perform administrative actions, while regular users can borrow books and manage their account.
+<h2>Online Library ASP.NET Core 6 Web Application</h2>
+<p>This project is an Online Library web application built using ASP.NET Core 6 and Microsoft SQL Server for the database. The application supports two types of users: admin and regular users (students and teachers). Admins have the ability to manage books, view users, and perform administrative actions, while regular users can borrow books and manage their account.
+</p>
 
-Features
+<b>Features<b>
 Admin Features:
-  Add, edit, and remove books.
-  View registered users.
-  Deactivate user accounts if a book is not returned within 30 days.
+<ul>
+  <li>Add, edit, and remove books.</li>
+  <li>View registered users.</li>
+  <li>Deactivate user accounts if a book is not returned within 30 days.</li>
+</ul> 
   
 User Features:
-  Borrow books (3 books for students, 2 books for teachers) for 30 days.
-  Pay charges (Rs 5 for students, Rs 10 for teachers) if books are not returned within 30 days.
+<ul>
+  <li>Borrow books (3 books for students, 2 books for teachers) for 30 days.</li>
+  <li>Pay charges (Rs 5 for students, Rs 10 for teachers) if books are not returned within 30 days.</li>
+</ul>
+
+  <br />
   
 Technology Stack
 ASP.NET Core 6:
