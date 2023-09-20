@@ -16,7 +16,9 @@ User Features:
   <li>Pay charges (Rs 5 for students, Rs 10 for teachers) if books are not returned within 30 days.</li>
 </ul>
 
-  <br />
+<br>
+<br/>
+
   
 Technology Stack:<br/>
 ASP.NET Core 6:
